@@ -1,8 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjc1vfytyalt2"]
+[gd_scene load_steps=10 format=3 uid="uid://cjc1vfytyalt2"]
 
 [ext_resource type="TileSet" uid="uid://cd3sdlcs1tmgc" path="res://scripts/brackyes.tres" id="1_4pkei"]
 [ext_resource type="TileSet" uid="uid://cig463v134kkq" path="res://scripts/brackyes-bg.tres" id="1_d6xby"]
 [ext_resource type="Script" path="res://scripts/stage_1.gd" id="1_xwjro"]
+[ext_resource type="PackedScene" uid="uid://8cuuv6odub2t" path="res://scenes/parts_scenes/player.tscn" id="4_0xihn"]
+[ext_resource type="PackedScene" uid="uid://dxnhdyk1vmw0f" path="res://scenes/parts_scenes/button.tscn" id="5_rp41a"]
+[ext_resource type="PackedScene" uid="uid://y8y1bpfln114" path="res://scenes/parts_scenes/ui_arrow.tscn" id="6_501g7"]
+
+[sub_resource type="Animation" id="Animation_rii08"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(768, 288)]
+}
+
+[sub_resource type="Animation" id="Animation_75ip5"]
+resource_name = "down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(768, 288), Vector2(768, 448)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_udpbp"]
+_data = {
+"RESET": SubResource("Animation_rii08"),
+"down": SubResource("Animation_75ip5")
+}
 
 [node name="Stage1" type="Node2D"]
 script = ExtResource("1_xwjro")
@@ -19,7 +58,7 @@ format = 2
 [node name="TileMapFront" type="TileMap" parent="."]
 tile_set = ExtResource("1_4pkei")
 format = 2
-layer_0/tile_data = PackedInt32Array(1179648, 262144, 0, 1179649, 262144, 0, 1179650, 262144, 0, 1179651, 262144, 0, 1179652, 262144, 0, 1179653, 262144, 0, 1179654, 262144, 0, 1179655, 262144, 0, 1179656, 262144, 0, 1179657, 262144, 0, 1179658, 262144, 0, 1179659, 262144, 0, 1179660, 262144, 0, 1179661, 262144, 0, 1179662, 262144, 0, 1179663, 262144, 0, 1179664, 262144, 0, 1179665, 262144, 0, 1179666, 262144, 0, 1179667, 262144, 0, 1179668, 262144, 0, 1179669, 262144, 0, 1179670, 262144, 0, 1179671, 262144, 0, 1179672, 262144, 0, 1179673, 262144, 0, 1179674, 262144, 0, 1179675, 262144, 0, 1179676, 262144, 0, 1179677, 262144, 0, 1179678, 262144, 0, 1179679, 262144, 0)
+layer_0/tile_data = PackedInt32Array(2031616, 262144, 0, 2031617, 262144, 0, 2031618, 262144, 0, 2031619, 262144, 0, 2031620, 262144, 0, 2031621, 262144, 0, 2031622, 262144, 0, 2031623, 262144, 0, 2031624, 262144, 0, 2031625, 262144, 0, 2031626, 262144, 0, 2031627, 262144, 0, 2031628, 262144, 0, 2031629, 262144, 0, 2031630, 262144, 0, 2031631, 262144, 0, 2031632, 262144, 0, 2031633, 262144, 0, 2031634, 262144, 0, 2031635, 262144, 0, 2031636, 262144, 0, 2031637, 262144, 0, 2031638, 262144, 0, 2031639, 262144, 0, 2031640, 262144, 0, 2031641, 262144, 0, 2031642, 262144, 0, 2031643, 262144, 0, 2031644, 262144, 0, 2031645, 262144, 0, 2031646, 262144, 0, 2031647, 262144, 0, 2031648, 262144, 0, 2031649, 262144, 0, 2031650, 262144, 0, 2031651, 589824, 1, 2031652, 655360, 1, 2031653, 720896, 1, 2031654, 589824, 1, 2031655, 655360, 1, 2031656, 720896, 1, 2031657, 589824, 1, 2031658, 655360, 1, 2031659, 720896, 1, 2031660, 262144, 0, 2031661, 262144, 0, 2031662, 262144, 0, 2031663, 262144, 0, 2031664, 589824, 0, 2031665, 655360, 0, 2031666, 720896, 0, 2031667, 589824, 0, 2031668, 655360, 0, 2031669, 720896, 0, 2031670, 589824, 0, 2031671, 655360, 0, 2031672, 720896, 0, 2031673, 589824, 0, 2031674, 655360, 0, 2031675, 720896, 0, 2031676, 262144, 0, 2031677, 262144, 0, 2031678, 262144, 0, 2031679, 262144, 0, 2031680, 262144, 0, 2031681, 262144, 0, 2031682, 262144, 0, 2031683, 262144, 0, 2031684, 262144, 0, 2031685, 262144, 0, 2031686, 262144, 0, 2031687, 262144, 0, 2031688, 262144, 0, 2031689, 262144, 0, 2031690, 262144, 0, 2031691, 262144, 0, 2031692, 262144, 0, 2031693, 262144, 0, 2031694, 262144, 0, 2031695, 262144, 0, 1638479, 262144, 1, 1704015, 262144, 1, 1769551, 262144, 1, 1835087, 262144, 1, 1900623, 262144, 1, 1966159, 262144, 1, 1310799, 262144, 1, 1376335, 262144, 1, 1441871, 262144, 1, 1507407, 262144, 1, 1572943, 262144, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -42,3 +81,19 @@ text = "title"
 layout_mode = 2
 text = "Next
 "
+
+[node name="Player" parent="." instance=ExtResource("4_0xihn")]
+position = Vector2(1160, 408)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Button" parent="." instance=ExtResource("5_rp41a")]
+position = Vector2(984, 496)
+
+[node name="Arrow" parent="." instance=ExtResource("6_501g7")]
+position = Vector2(768, 288)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Arrow"]
+libraries = {
+"": SubResource("AnimationLibrary_udpbp")
+}
