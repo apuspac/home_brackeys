@@ -11,5 +11,17 @@ config_version=5
 [application]
 
 config/name="car-blackeys"
+run/main_scene="res://scenes/title.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
+
+[layer_names]
+
+2d_physics/layer_1="player_car"
+2d_physics/layer_2="wall"

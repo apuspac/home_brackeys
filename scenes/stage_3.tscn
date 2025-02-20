@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://c84x3pj3aobu4"]
+
+[ext_resource type="Script" path="res://scripts/stage_3.gd" id="1_is5n4"]
+[ext_resource type="TileSet" uid="uid://cig463v134kkq" path="res://scripts/brackyes-bg.tres" id="1_serq5"]
+[ext_resource type="TileSet" uid="uid://cd3sdlcs1tmgc" path="res://scripts/brackyes.tres" id="2_0s8el"]
+
+[node name="Stage3" type="Node2D"]
+script = ExtResource("1_is5n4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1288.0
+offset_bottom = 744.0
+color = Color(0.467794, 0.472543, 0.499755, 1)
+
+[node name="TileMapBack" type="TileMap" parent="."]
+tile_set = ExtResource("1_serq5")
+format = 2
+
+[node name="TileMapFront" type="TileMap" parent="."]
+tile_set = ExtResource("2_0s8el")
+format = 2
+layer_0/tile_data = PackedInt32Array(1245184, 393216, 0, 1245185, 393216, 0, 1245186, 393216, 0, 1245187, 393216, 0, 1245188, 393216, 0, 1245189, 393216, 0, 1245190, 393216, 0, 1245191, 393216, 0, 1245192, 393216, 0, 1245193, 393216, 0, 1245194, 393216, 0, 1245195, 393216, 0, 1245196, 393216, 0, 1245197, 393216, 0, 1245198, 393216, 0, 1245199, 393216, 0, 1245200, 393216, 0, 1245201, 393216, 0, 1245202, 393216, 0, 1245203, 393216, 0, 1245204, 393216, 0, 1245205, 393216, 0, 1245206, 393216, 0, 1245207, 393216, 0, 1245208, 393216, 0, 1245209, 393216, 0, 1245210, 393216, 0, 1245211, 393216, 0, 1245212, 393216, 0, 1245213, 393216, 0, 1245214, 393216, 0, 1245215, 393216, 0, 1245216, 393216, 0, 1245217, 393216, 0, 1245218, 393216, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+text = "title"
+
+[node name="Next" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+text = "Next
+"
