@@ -86,6 +86,7 @@ text = "Next
 position = Vector2(1160, 408)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
 
 [node name="Button" parent="." instance=ExtResource("5_rp41a")]
 position = Vector2(984, 496)
