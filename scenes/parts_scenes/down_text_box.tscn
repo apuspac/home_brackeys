@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnkxtp2ttcd74"]
+
+[ext_resource type="Texture2D" uid="uid://d2lsmaxcae6ap" path="res://assets/my/dialog_box.png" id="1_3l1pr"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/down_text_box.gd" id="1_434p4"]
+[ext_resource type="Theme" uid="uid://dkmjyg6gujjuu" path="res://scripts/parts_scripts/text_box.tres" id="2_83pjb"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/textbox_falldown.gd" id="2_ecjaf"]
+
+[node name="DownTextBox" type="Node2D"]
+position = Vector2(128, 56)
+script = ExtResource("1_434p4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("2_ecjaf")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Node2D"]
+offset_right = 376.0
+offset_bottom = 67.0
+texture = ExtResource("1_3l1pr")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="Node2D"]
+offset_right = 40.0
+offset_bottom = 67.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="Node2D/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_83pjb")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+vertical_alignment = 1

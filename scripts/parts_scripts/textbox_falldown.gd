@@ -1,7 +1,6 @@
-extends MarginContainer
+extends Node2D
 
 @onready var text_label: Label = $MarginContainer/Label
-
 
 const MAX_WIDTH: int = 512
 
@@ -11,31 +10,11 @@ var letter_index: int = 0
 signal notice_finished_textdisplay()
 
 
-func _ready():
-    pass
-
 func display_text(text_to_display: String) -> void:
     self.text = text_to_display
-
     text_label.text = text_to_display
 
-    # 固定サイズにしたいので、常にMAX
-    custom_minimum_size.x = MAX_WIDTH
-
-    # await resized
-    # custom_minimum_size.x = min(size.x, MAX_WIDTH)
-
-    if size.x > MAX_WIDTH:
-        text_label.autowrap_mode = TextServer.AUTOWRAP_WORD
-        await resized
-        await resized
-        custom_minimum_size.y = size.y
-
-    global_position.x -= size.x / 2
-    global_position.y -= size.y + 24
-
     text_label.text = ""
-    # _display_letter()
     _display_letter_ratio()
 
 

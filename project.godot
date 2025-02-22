@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 TextManager="*res://scripts/parts_scripts/TextManager.gd"
-TextManagerCanvas="*res://scripts/parts_scripts/TextManager_canvas.gd"
 
 [display]
 
