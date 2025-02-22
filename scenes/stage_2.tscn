@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8pef28vobs8n"]
+[gd_scene load_steps=9 format=3 uid="uid://c8pef28vobs8n"]
 
 [ext_resource type="Script" path="res://scripts/stage_2.gd" id="1_hgptu"]
 [ext_resource type="TileSet" uid="uid://cig463v134kkq" path="res://scripts/brackyes-bg.tres" id="1_w1rhq"]
 [ext_resource type="TileSet" uid="uid://cd3sdlcs1tmgc" path="res://scripts/brackyes.tres" id="2_naetj"]
 [ext_resource type="PackedScene" uid="uid://8cuuv6odub2t" path="res://scenes/parts_scenes/player.tscn" id="4_gkthh"]
+[ext_resource type="Theme" uid="uid://dkmjyg6gujjuu" path="res://scripts/parts_scripts/text_box.tres" id="4_nnuri"]
 [ext_resource type="Script" path="res://scripts/parts_scripts/testbox.gd" id="5_3k1dx"]
+[ext_resource type="PackedScene" uid="uid://dxnhdyk1vmw0f" path="res://scenes/parts_scenes/button.tscn" id="6_2cv6e"]
+[ext_resource type="PackedScene" uid="uid://cuwti8f8dvnoe" path="res://scenes/parts_scenes/dialog_box.tscn" id="7_7vt6p"]
 
 [node name="Stage2" type="Node2D"]
 script = ExtResource("1_hgptu")
@@ -25,6 +28,19 @@ layer_0/tile_data = PackedInt32Array(1769509, 393216, 0, 1769510, 393216, 0, 176
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="TestBox" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 168.0
+offset_bottom = 168.0
+script = ExtResource("5_3k1dx")
+
+[node name="Timer" type="Timer" parent="CanvasLayer/TestBox"]
+one_shot = true
+
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
@@ -38,26 +54,29 @@ offset_bottom = 40.0
 
 [node name="Title" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_nnuri")
 text = "title"
 
 [node name="Next" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_nnuri")
 text = "Next
 "
 
-[node name="TestBox" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 152.0
-offset_top = 128.0
-offset_right = 192.0
-offset_bottom = 168.0
-script = ExtResource("5_3k1dx")
-
-[node name="Timer" type="Timer" parent="CanvasLayer/TestBox"]
-one_shot = true
+[node name="WaitTimer" type="Timer" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("4_gkthh")]
 position = Vector2(1040, 336)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-100, -50)
+zoom = Vector2(2, 2)
+
+[node name="DialogBox" parent="Player" instance=ExtResource("7_7vt6p")]
+position = Vector2(-104, -24)
+
+[node name="Button" parent="." instance=ExtResource("6_2cv6e")]
+position = Vector2(808, 432)
+
+[node name="DialogBox" parent="." instance=ExtResource("7_7vt6p")]
+position = Vector2(760, 296)

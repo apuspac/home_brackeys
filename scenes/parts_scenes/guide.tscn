@@ -1,0 +1,92 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqwjvljkx3jpt"]
+
+[ext_resource type="Texture2D" uid="uid://d2lsmaxcae6ap" path="res://assets/my/dialog_box.png" id="1_70y67"]
+[ext_resource type="Texture2D" uid="uid://dyj81cubxk7td" path="res://assets/brackeys_platformer_assets/sprites/slime_green.png" id="2_nk5re"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxhrl"]
+atlas = ExtResource("2_nk5re")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knsh4"]
+atlas = ExtResource("2_nk5re")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ib4c"]
+atlas = ExtResource("2_nk5re")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7pxf"]
+atlas = ExtResource("2_nk5re")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1bh5"]
+atlas = ExtResource("2_nk5re")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atcc7"]
+atlas = ExtResource("2_nk5re")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7txo"]
+atlas = ExtResource("2_nk5re")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g2ic"]
+atlas = ExtResource("2_nk5re")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l32va"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxhrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knsh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ib4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7pxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1bh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atcc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7txo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6g2ic")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Guide" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_70y67")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 24)
+scale = Vector2(2.33333, 2.33333)
+sprite_frames = SubResource("SpriteFrames_l32va")
+frame = 5
+frame_progress = 0.959508

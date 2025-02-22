@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dkmjyg6gujjuu"]
+
+[ext_resource type="FontFile" uid="uid://c1ebc52eprtbx" path="res://assets/font/x10y12pxDonguriDuel.ttf" id="1_eby6k"]
+
+[resource]
+default_font = ExtResource("1_eby6k")
+default_font_size = 50

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdvbg0x4fnven"]
+[gd_scene load_steps=5 format=3 uid="uid://bdvbg0x4fnven"]
 
 [ext_resource type="Script" path="res://scripts/title.gd" id="1_jgx2f"]
 [ext_resource type="Script" path="res://scripts/parts_scripts/start_button.gd" id="2_lpv60"]
+[ext_resource type="Theme" uid="uid://dkmjyg6gujjuu" path="res://scripts/parts_scripts/text_box.tres" id="2_odedk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s3o11"]
 font_size = 73
@@ -25,6 +26,7 @@ offset_left = 520.0
 offset_top = 176.0
 offset_right = 856.0
 offset_bottom = 277.0
+theme = ExtResource("2_odedk")
 text = "aaahhh"
 label_settings = SubResource("LabelSettings_s3o11")
 
@@ -40,9 +42,11 @@ layout_mode = 2
 
 [node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_odedk")
 text = "start"
 script = ExtResource("2_lpv60")
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_odedk")
 text = "quit"

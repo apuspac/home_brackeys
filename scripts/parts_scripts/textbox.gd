@@ -1,10 +1,9 @@
 extends MarginContainer
 
 @onready var text_label: Label = $MarginContainer/Label
-@onready var timer: Timer = $DisplayTimer
 
 
-const MAX_WIDTH: int = 256
+const MAX_WIDTH: int = 512
 
 var text: String = ""
 var letter_index: int = 0
@@ -17,15 +16,18 @@ signal notice_finished_textdisplay()
 
 
 func _ready():
-    timer.timeout.connect(self._on_display_timer_timeout)
+    pass
 
 func display_text(text_to_display: String) -> void:
     self.text = text_to_display
 
     text_label.text = text_to_display
 
-    await resized
-    custom_minimum_size.x = min(size.x, MAX_WIDTH)
+    # 固定サイズにしたいので、常にMAX
+    custom_minimum_size.x = MAX_WIDTH
+
+    # await resized
+    # custom_minimum_size.x = min(size.x, MAX_WIDTH)
 
     if size.x > MAX_WIDTH:
         text_label.autowrap_mode = TextServer.AUTOWRAP_WORD
@@ -51,26 +53,3 @@ func _display_letter_ratio() -> void:
     await tween.finished
 
     notice_finished_textdisplay.emit()
-
-
-
-
-func _display_letter() -> void:
-    if letter_index >= self.text.length():
-        notice_finished_textdisplay.emit()
-        return
-
-    text_label.text += self.text[letter_index]
-    letter_index += 1
-
-    if letter_index < self.text.length():
-        match self.text[letter_index]:
-            "!", ".", ",", "?":
-                timer.start(puctuation_time)
-            " ":
-                timer.start(space_time)
-            _:
-                timer.start(letter_time)
-
-func _on_display_timer_timeout():
-    _display_letter()
