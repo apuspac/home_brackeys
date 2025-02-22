@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://g5nmj07fyqeg"]
 
-[ext_resource type="Script" path="res://scripts/stage_1.gd" id="1_nv28j"]
+[ext_resource type="Script" path="res://scripts/stage1.gd" id="1_nv28j"]
 [ext_resource type="TileSet" uid="uid://cig463v134kkq" path="res://scripts/brackyes-bg.tres" id="2_7j28v"]
 [ext_resource type="TileSet" uid="uid://cd3sdlcs1tmgc" path="res://scripts/brackyes.tres" id="3_i2y3g"]
 [ext_resource type="Theme" uid="uid://dkmjyg6gujjuu" path="res://scripts/parts_scripts/text_box.tres" id="4_pipk6"]

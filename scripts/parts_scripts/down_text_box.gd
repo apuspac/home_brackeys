@@ -27,7 +27,7 @@ func start_dialog(position: Vector2, lines: Array[String]):
         return
 
     text_box.notice_finished_textdisplay.connect(self._on_text_box_finished_displaying)
-    text_box.position = position
+    # text_box.position = position
 
     dialog_lines = lines
     _show_text_box()
@@ -36,7 +36,7 @@ func start_dialog(position: Vector2, lines: Array[String]):
 
 
 func _show_text_box():
-    text_box.global_position = self.position
+    # text_box.position = self.position
     print_debug(text_box.position)
     text_box.display_text(dialog_lines[current_line_index])
     can_advance_line = false
@@ -55,10 +55,10 @@ func _enterd_next_textbox_area():
 
     _show_text_box()
 
-func _unhandled_input(event):
-    if (
-        event.is_action_pressed("ui_accept") &&
-        is_dialog_active &&
-        can_advance_line
-    ):
-        _enterd_next_textbox_area()
+# func _unhandled_input(event):
+#     if (
+#         event.is_action_pressed("ui_accept") &&
+#         is_dialog_active &&
+#         can_advance_line
+#     ):
+#         _enterd_next_textbox_area()

@@ -1,9 +1,31 @@
 [gd_scene load_steps=2 format=3 uid="uid://cuwti8f8dvnoe"]
 
-[ext_resource type="Script" path="res://scripts/parts_scripts/testbox2.gd" id="1_b2a1m"]
+[sub_resource type="GDScript" id="GDScript_f8cyg"]
+script/source = "extends Node2D
+
+@onready var timer: Timer = $Timer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+    timer.timeout.connect(self._init_ready)
+    timer.start(1.0)
+
+func _init_ready():
+    # compositionの考えの場合、このStage2をexportから指定できるようにすればいい。はーなるほどね。
+    print_debug(get_parent().get_path())
+    TextManager.start_dialog(self.position, sample_lines, get_parent().get_path())
+
+
+var sample_lines: Array[String] = [
+    \"aaaaaaa\",
+    \"bbbbbbbbbbb\",
+    \"ccccccccccccccccc\"
+]
+"
 
 [node name="DialogBox" type="Node2D"]
-script = ExtResource("1_b2a1m")
+script = SubResource("GDScript_f8cyg")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

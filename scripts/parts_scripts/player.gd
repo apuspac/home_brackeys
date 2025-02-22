@@ -9,6 +9,8 @@ enum Direction {IDLE, LEFT, RIGHT}
 var direction: Direction
 var sprite: AnimatedSprite2D
 
+signal notice_end_idle(state: Direction)
+
 func _ready():
     direction = Direction.IDLE
     sprite = get_node("AnimatedSprite2D")
@@ -33,8 +35,10 @@ func _physics_process(delta: float) -> void:
 func idle() -> void:
     if Input.is_action_pressed("ui_left"):
         direction = Direction.LEFT
+        notice_end_idle.emit(Direction.LEFT)
     elif Input.is_action_pressed("ui_right"):
         direction = Direction.RIGHT
+        notice_end_idle.emit(Direction.RIGHT)
 
 
 func move(delta) -> void:

@@ -14,6 +14,16 @@ signal notice_finished_textdisplay()
 func _ready():
     pass
 
+
+func tween_position(_pos: Vector2):
+    var tween = create_tween()
+    tween.tween_property(self, "position", self.position +  _pos, 0.5)
+    tween.play()
+    await tween.finished
+
+
+
+
 func display_text(text_to_display: String) -> void:
     self.text = text_to_display
 
