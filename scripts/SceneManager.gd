@@ -48,3 +48,6 @@ func go_to_stage1():
 
 func go_to_title_scene() -> void:
     get_tree().change_scene_to_file("res://scenes/title.tscn")
+
+func go_to_ending() -> void:
+    get_tree().change_scene_to_file("res://scenes/ending.tscn")
