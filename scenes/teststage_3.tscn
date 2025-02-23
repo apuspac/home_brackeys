@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dn6px4k3ltbpr"]
+[gd_scene load_steps=14 format=3 uid="uid://dn6px4k3ltbpr"]
 
 [ext_resource type="Script" path="res://scripts/stage1.gd" id="1_es3pr"]
 [ext_resource type="TileSet" uid="uid://cig463v134kkq" path="res://scripts/brackyes-bg.tres" id="2_q41q7"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/parts_scripts/guide_box.gd" id="5_8jy00"]
 [ext_resource type="PackedScene" uid="uid://8cuuv6odub2t" path="res://scenes/parts_scenes/player.tscn" id="5_y2ge0"]
 [ext_resource type="PackedScene" uid="uid://cqwjvljkx3jpt" path="res://scenes/parts_scenes/guide.tscn" id="6_pmv55"]
+[ext_resource type="PackedScene" uid="uid://dk1yyymnnah5h" path="res://scenes/parts_scenes/text_box_vertical.tscn" id="7_kcogc"]
 [ext_resource type="Script" path="res://scripts/parts_scripts/next_text_box_area.gd" id="8_hf070"]
 [ext_resource type="PackedScene" uid="uid://utfv6ylf4oft" path="res://scenes/parts_scenes/archer.tscn" id="9_igoj6"]
 
@@ -80,6 +81,28 @@ offset_bottom = -50.0
 
 [node name="Timer" type="Timer" parent="CanvasLayer/GuideBox"]
 one_shot = true
+
+[node name="GuideBox2" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Guide" parent="CanvasLayer/GuideBox2" instance=ExtResource("6_pmv55")]
+visible = false
+offset_left = 24.0
+offset_top = 40.0
+offset_right = 64.0
+offset_bottom = 80.0
+
+[node name="TextBoxCanvas" parent="CanvasLayer/GuideBox2" instance=ExtResource("7_kcogc")]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 112.0
+offset_right = 111.0
+offset_bottom = 464.0
 
 [node name="Player" parent="." instance=ExtResource("5_y2ge0")]
 position = Vector2(1208, 496)
