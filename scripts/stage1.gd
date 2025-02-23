@@ -16,7 +16,7 @@ func _ready() -> void:
 
 
 func _on_title_pressed() -> void:
-    SceneManager.go_to_next_scene("res://scenes/stage3.tscn")
+    SceneManager.go_to_next_scene()
     # get_tree().change_scene_to_file("res://scenes/title.tscn")
 
 func _on_next_pressed() -> void:
