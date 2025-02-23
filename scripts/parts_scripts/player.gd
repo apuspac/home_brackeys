@@ -56,8 +56,6 @@ func move(delta) -> void:
     move_and_slide()
 
 func _on_wall_collision() -> void:
-    print_debug("wall collision")
-
     if direction == Direction.RIGHT:
         direction = Direction.LEFT
     else:
