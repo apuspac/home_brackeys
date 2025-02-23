@@ -9,9 +9,9 @@ func _ready() -> void:
 
 func _on_start_pressed(key) -> void:
     if key == "right":
-        get_tree().change_scene_to_file("res://scenes/tutorial.tscn")
+        SceneManager.go_to_tutorial()
     if key == "left":
-        get_tree().change_scene_to_file("res://scenes/stage_1.tscn")
+        SceneManager.go_to_stage1()
 
 
 func _on_quit_pressed() -> void:

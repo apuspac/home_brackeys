@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://g5nmj07fyqeg"]
+[gd_scene load_steps=16 format=3 uid="uid://g5nmj07fyqeg"]
 
 [ext_resource type="Script" path="res://scripts/stage1.gd" id="1_nv28j"]
 [ext_resource type="TileSet" uid="uid://cig463v134kkq" path="res://scripts/brackyes-bg.tres" id="2_7j28v"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/parts_scripts/next_text_box_area.gd" id="8_7mlhp"]
 [ext_resource type="Script" path="res://scripts/parts_scripts/gameover_scene_change.gd" id="9_xchcc"]
 [ext_resource type="Script" path="res://scripts/parts_scripts/next_scene_change.gd" id="10_t05dj"]
+[ext_resource type="PackedScene" uid="uid://wxepmw8jf722" path="res://scenes/parts_scenes/map_label.tscn" id="11_0kjeo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u5xnh"]
 size = Vector2(112, 18)
@@ -131,3 +132,49 @@ script = ExtResource("10_t05dj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChange/Area2D2"]
 scale = Vector2(2.36, 9.24)
 shape = SubResource("RectangleShape2D_x4qq4")
+
+[node name="Decorations" type="Node" parent="."]
+
+[node name="MapLabel" parent="Decorations" instance=ExtResource("11_0kjeo")]
+offset_left = 1104.0
+offset_top = 416.0
+offset_right = 1179.0
+offset_bottom = 467.0
+theme_override_colors/font_color = Color(0.733333, 0.45098, 0.4, 1)
+text = ">>>"
+
+[node name="MapLabel2" parent="Decorations" instance=ExtResource("11_0kjeo")]
+offset_left = 920.0
+offset_top = 208.0
+offset_right = 995.0
+offset_bottom = 259.0
+theme_override_colors/font_color = Color(0.733333, 0.45098, 0.4, 1)
+text = ">>>"
+
+[node name="MapLabel3" parent="Decorations" instance=ExtResource("11_0kjeo")]
+visible = false
+offset_left = 1088.0
+offset_top = 336.0
+offset_right = 1163.0
+offset_bottom = 387.0
+scale = Vector2(-0.973802, 0.843332)
+theme_override_colors/font_color = Color(0.733333, 0.45098, 0.4, 1)
+text = ">>>"
+
+[node name="MapLabel4" parent="Decorations" instance=ExtResource("11_0kjeo")]
+offset_left = 544.0
+offset_top = 128.0
+offset_right = 619.0
+offset_bottom = 179.0
+scale = Vector2(2.2506, 1.74129)
+theme_override_colors/font_color = Color(0.733333, 0.45098, 0.4, 1)
+text = ">>>"
+
+[node name="MapLabel5" parent="Decorations" instance=ExtResource("11_0kjeo")]
+offset_left = 128.0
+offset_top = 120.0
+offset_right = 203.0
+offset_bottom = 171.0
+scale = Vector2(2.2506, 1.74129)
+theme_override_colors/font_color = Color(0.733333, 0.45098, 0.4, 1)
+text = ">>>"

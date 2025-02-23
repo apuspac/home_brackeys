@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dvmwoefp7apyn"]
+[gd_scene load_steps=21 format=3 uid="uid://dvmwoefp7apyn"]
 
 [ext_resource type="Script" path="res://scripts/stage3.gd" id="1_yxgya"]
 [ext_resource type="TileSet" uid="uid://cig463v134kkq" path="res://scripts/brackyes-bg.tres" id="2_vt6fq"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://cnkxtp2ttcd74" path="res://scenes/parts_scenes/down_text_box.tscn" id="9_mk0rr"]
 [ext_resource type="Script" path="res://scripts/parts_scripts/next_text_box_area.gd" id="10_4cf6n"]
 [ext_resource type="Script" path="res://scripts/parts_scripts/next_downed_textbox_area.gd" id="11_tkoyw"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/gameover_scene_change.gd" id="12_llm8m"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/next_scene_change.gd" id="13_fxw1b"]
+[ext_resource type="PackedScene" uid="uid://wxepmw8jf722" path="res://scenes/parts_scenes/map_label.tscn" id="14_1l8na"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vro2b"]
 size = Vector2(210, 34)
@@ -22,6 +25,10 @@ size = Vector2(24, 20.5)
 size = Vector2(213, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4mhg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crpa3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3elbx"]
 
 [node name="Stage3" type="Node2D"]
 script = ExtResource("1_yxgya")
@@ -146,3 +153,38 @@ script = ExtResource("11_tkoyw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DonwedTextBoxNext/Area2D2"]
 scale = Vector2(6.52, 1)
 shape = SubResource("RectangleShape2D_m4mhg")
+
+[node name="SceneChange" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="SceneChange"]
+position = Vector2(1304, 472)
+script = ExtResource("12_llm8m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChange/Area2D"]
+position = Vector2(-128, -80)
+scale = Vector2(2.36, 9.24)
+shape = SubResource("RectangleShape2D_crpa3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SceneChange/Area2D"]
+position = Vector2(-744, 72)
+scale = Vector2(19.7249, 3.84615)
+shape = SubResource("RectangleShape2D_3elbx")
+
+[node name="Area2D2" type="Area2D" parent="SceneChange"]
+position = Vector2(24, 208)
+script = ExtResource("13_fxw1b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChange/Area2D2"]
+position = Vector2(144, 136)
+scale = Vector2(2.36, 9.24)
+shape = SubResource("RectangleShape2D_crpa3")
+
+[node name="Decorations" type="Node" parent="."]
+
+[node name="MapLabel" parent="Decorations" instance=ExtResource("14_1l8na")]
+offset_left = 936.0
+offset_top = 352.0
+offset_right = 1011.0
+offset_bottom = 403.0
+theme_override_colors/font_color = Color(0.0453001, 0.527571, 0.665156, 1)
+text = ">>>"
