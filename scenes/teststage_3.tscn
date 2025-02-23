@@ -91,21 +91,21 @@ zoom = Vector2(2, 2)
 [node name="TextBoxNext" type="Node2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="TextBoxNext"]
-position = Vector2(800, 192)
+position = Vector2(968, 488)
 script = ExtResource("8_hf070")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D"]
 shape = SubResource("RectangleShape2D_u5xnh")
 
 [node name="Area2D2" type="Area2D" parent="TextBoxNext"]
-position = Vector2(400, 200)
+position = Vector2(560, 488)
 script = ExtResource("8_hf070")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D2"]
 shape = SubResource("RectangleShape2D_s3rxi")
 
 [node name="Area2D3" type="Area2D" parent="TextBoxNext"]
-position = Vector2(0, 208)
+position = Vector2(136, 488)
 script = ExtResource("8_hf070")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D3"]
