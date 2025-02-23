@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://lvh1xf75ipmq"]
+
+[ext_resource type="Script" path="res://scripts/parts_scripts/ending.gd" id="1_jwfng"]
+[ext_resource type="Theme" uid="uid://dkmjyg6gujjuu" path="res://scripts/parts_scripts/text_box.tres" id="2_6fe70"]
+[ext_resource type="PackedScene" uid="uid://cqwjvljkx3jpt" path="res://scenes/parts_scenes/guide.tscn" id="4_jgs6x"]
+[ext_resource type="PackedScene" uid="uid://dk1yyymnnah5h" path="res://scenes/parts_scenes/text_box_manual.tscn" id="5_4wq4g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s3o11"]
+font_size = 73
+font_color = Color(0, 0, 0, 1)
+
+[node name="Ending" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jwfng")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 600.0
+color = Color(0.910727, 0.66336, 0.615757, 1)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 232.0
+offset_top = 192.0
+offset_right = 568.0
+offset_bottom = 293.0
+theme = ExtResource("2_6fe70")
+text = "aaahhh"
+label_settings = SubResource("LabelSettings_s3o11")
+horizontal_alignment = 1
+
+[node name="Guide" parent="." instance=ExtResource("4_jgs6x")]
+offset_left = 448.0
+offset_top = 504.0
+offset_right = 488.0
+offset_bottom = 544.0
+scale = Vector2(1.07299, 1.174)
+
+[node name="AnimatedSprite2D" parent="Guide" index="1"]
+autoplay = "default"
+
+[node name="TextBoxCanvas" parent="." instance=ExtResource("5_4wq4g")]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 144.0
+offset_right = 416.0
+offset_bottom = 211.0
+scale = Vector2(1.39986, 1.18044)
+
+[node name="Label" parent="TextBoxCanvas/MarginContainer" index="0"]
+text = "END!"
+
+[node name="TextBoxCanvas2" parent="." instance=ExtResource("5_4wq4g")]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 504.0
+offset_right = 794.0
+offset_bottom = 571.0
+
+[node name="Label" parent="TextBoxCanvas2/MarginContainer" index="0"]
+theme_override_font_sizes/font_size = 22
+text = "aaahhh"
+
+[editable path="Guide"]
+[editable path="TextBoxCanvas"]
+[editable path="TextBoxCanvas2"]

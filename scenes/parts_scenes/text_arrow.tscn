@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://dkmjyg6gujjuu" path="res://scripts/parts_scripts/text_box.tres" id="1_yfiwo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ivn4"]
-size = Vector2(72, 56)
+size = Vector2(40, 24)
 
 [node name="TextArrow" type="CharacterBody2D"]
 collision_layer = 4
@@ -16,11 +16,12 @@ script = ExtResource("1_o41dj")
 offset_right = 24.0
 offset_bottom = 23.0
 theme = ExtResource("1_yfiwo")
+theme_override_font_sizes/font_size = 25
 text = "->>"
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(36, 28)
+position = Vector2(20, 12)
 shape = SubResource("RectangleShape2D_8ivn4")
 
 [node name="Timer" type="Timer" parent="."]

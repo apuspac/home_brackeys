@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdvbg0x4fnven"]
+[gd_scene load_steps=7 format=3 uid="uid://bdvbg0x4fnven"]
 
 [ext_resource type="Script" path="res://scripts/title.gd" id="1_jgx2f"]
 [ext_resource type="Script" path="res://scripts/parts_scripts/start_button.gd" id="2_lpv60"]
 [ext_resource type="Theme" uid="uid://dkmjyg6gujjuu" path="res://scripts/parts_scripts/text_box.tres" id="2_odedk"]
+[ext_resource type="PackedScene" uid="uid://cqwjvljkx3jpt" path="res://scenes/parts_scenes/guide.tscn" id="4_b047q"]
+[ext_resource type="PackedScene" uid="uid://dk1yyymnnah5h" path="res://scenes/parts_scenes/text_box_manual.tscn" id="5_y2vov"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s3o11"]
 font_size = 73
@@ -17,25 +19,28 @@ script = ExtResource("1_jgx2f")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1279.0
-offset_bottom = 717.0
+offset_right = 800.0
+offset_bottom = 600.0
+color = Color(0.910727, 0.66336, 0.615757, 1)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 0
-offset_left = 520.0
-offset_top = 176.0
-offset_right = 856.0
-offset_bottom = 277.0
+offset_left = 232.0
+offset_top = 192.0
+offset_right = 568.0
+offset_bottom = 293.0
 theme = ExtResource("2_odedk")
 text = "aaahhh"
 label_settings = SubResource("LabelSettings_s3o11")
+horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 528.0
-offset_top = 368.0
-offset_right = 792.0
-offset_bottom = 512.0
+offset_left = 272.0
+offset_top = 352.0
+offset_right = 536.0
+offset_bottom = 496.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -50,3 +55,37 @@ script = ExtResource("2_lpv60")
 layout_mode = 2
 theme = ExtResource("2_odedk")
 text = "quit"
+
+[node name="Guide" parent="." instance=ExtResource("4_b047q")]
+offset_left = 104.0
+offset_top = 136.0
+offset_right = 144.0
+offset_bottom = 176.0
+scale = Vector2(1.07299, 1.174)
+
+[node name="TextBoxCanvas" parent="." instance=ExtResource("5_y2vov")]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 136.0
+offset_right = 542.0
+offset_bottom = 203.0
+scale = Vector2(1.39986, 1.18044)
+
+[node name="Label" parent="TextBoxCanvas/MarginContainer" index="0"]
+text = "aaahhhhhhhhhhh
+"
+
+[node name="TextBoxCanvas2" parent="." instance=ExtResource("5_y2vov")]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 272.0
+offset_right = 538.0
+offset_bottom = 339.0
+
+[node name="Label" parent="TextBoxCanvas2/MarginContainer" index="0"]
+theme_override_font_sizes/font_size = 22
+text = "Press the right arrow key!
+"
+
+[editable path="TextBoxCanvas"]
+[editable path="TextBoxCanvas2"]

@@ -44,7 +44,7 @@ _data = {
 "down": SubResource("Animation_75ip5")
 }
 
-[node name="Stage1" type="Node2D"]
+[node name="TestStage1" type="Node2D"]
 script = ExtResource("1_nm00k")
 
 [node name="ColorRect" type="ColorRect" parent="."]

@@ -16,7 +16,7 @@ func _ready():
 
 func _spawn_timer_end():
     spawn_arrow()
-    timer_next_spawn.start(0.5)
+    timer_next_spawn.start(1.0)
 
 
 func spawn_arrow():
