@@ -9,37 +9,42 @@ var current_line_index = 0
 var text_box
 var text_box_position: Vector2
 
-var is_dialog_active = false
+# var is_dialog_active = false
 var can_advance_line = false
 
 var add_child_path: String
 
 
 func start_dialog(position: Vector2, lines: Array[String], _path: String = ""):
-    if is_dialog_active:
-        return
+    # if is_dialog_active:
+    #     return
+        # is_dialog_active = false
+    current_line_index = 0
 
     add_child_path = _path
 
     dialog_lines = lines
     text_box_position = position
+
     _show_text_box()
 
-    is_dialog_active = true
+    # is_dialog_active = true
 
 
 func _show_text_box():
     text_box = text_box_scene.instantiate()
     text_box.notice_finished_textdisplay.connect(self._on_text_box_finished_displaying)
 
-    get_tree().root.get_node(add_child_path).add_child.call_deferred(text_box)
-    _display_text.call_deferred()
-
-
-func _display_text():
+    get_tree().root.get_node(add_child_path).add_child.call(text_box)
     text_box.position = text_box_position
     text_box.display_text(dialog_lines[current_line_index])
     can_advance_line = false
+
+func change_scene():
+    text_box.queue_free()
+    # is_dialog_active = false
+    print_debug("start_dialog")
+
 
 
 func _on_text_box_finished_displaying():
@@ -70,7 +75,7 @@ func _enterd_next_textbox_area():
     current_line_index += 1
 
     if current_line_index >= dialog_lines.size():
-        is_dialog_active = false
+        # is_dialog_active = false
         current_line_index = 0
         return
 

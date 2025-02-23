@@ -49,13 +49,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Title" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
-visible = false
 layout_mode = 2
 theme = ExtResource("4_pipk6")
 text = "title"
 
 [node name="Next" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
-visible = false
 layout_mode = 2
 theme = ExtResource("4_pipk6")
 text = "Next
