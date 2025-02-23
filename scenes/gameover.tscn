@@ -122,3 +122,5 @@ script = ExtResource("9_b6vfe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChange/Area2D"]
 scale = Vector2(18.125, -8.5)
 shape = SubResource("RectangleShape2D_kytov")
+
+[node name="Timer" type="Timer" parent="SceneChange/Area2D"]

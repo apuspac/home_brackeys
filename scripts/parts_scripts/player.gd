@@ -9,6 +9,10 @@ enum Direction {IDLE, LEFT, RIGHT}
 var direction: Direction
 var sprite: AnimatedSprite2D
 
+
+@onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var explosion: AnimatedSprite2D = $Explosion
+
 signal notice_end_idle(state: Direction)
 
 func _ready():
@@ -70,3 +74,7 @@ func change_animation() -> void:
         sprite.flip_h = false
     elif direction == Direction.LEFT:
         sprite.flip_h = true
+
+func player_explosion():
+    explosion.play("explosion")
+    sprite_2d.visible = false
