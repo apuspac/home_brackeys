@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://utfv6ylf4oft"]
+
+[ext_resource type="Script" path="res://scripts/parts_scripts/arrow_instantiate.gd" id="1_akrms"]
+
+[node name="Archer" type="Node2D"]
+script = ExtResource("1_akrms")
+
+[node name="Timer" type="Timer" parent="."]
