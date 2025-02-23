@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://uofpnx1mtwpc"]
+
+[ext_resource type="Script" path="res://scripts/parts_scripts/text_bullet.gd" id="1_dolqx"]
+[ext_resource type="Theme" uid="uid://dkmjyg6gujjuu" path="res://scripts/parts_scripts/text_box.tres" id="2_gl6c4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ivn4"]
+size = Vector2(32, 56)
+
+[node name="TextBullet" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_dolqx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_right = 24.0
+offset_bottom = 23.0
+theme = ExtResource("2_gl6c4")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 28)
+shape = SubResource("RectangleShape2D_8ivn4")
+
+[node name="Timer" type="Timer" parent="."]
