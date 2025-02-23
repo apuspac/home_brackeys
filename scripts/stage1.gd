@@ -23,3 +23,13 @@ func _on_next_pressed() -> void:
 
 func _on_button_pressed() -> void:
     ui_sprite.down()
+
+func get_staged_line() -> Array[String]:
+    var lines: Array[String] = [
+        "Stage1 Stage1",
+        "good good ",
+        "WAAAAAIT",
+        "AAAHHH",
+    ]
+
+    return lines

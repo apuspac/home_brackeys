@@ -3,6 +3,7 @@ extends Control
 @onready var timer: Timer = $Timer
 @onready var guide: Control = $Guide
 
+var text_lines: Array[String]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +14,12 @@ func _ready():
 func _init_ready():
     print_debug(get_parent().get_path())
     guide.visible = true
-    TextManager.start_dialog(self.position, sample_lines, get_parent().get_path())
+
+    # stage_nodeからcall
+    var parent =  get_parent().get_parent()
+    text_lines = parent.get_staged_line()
+
+    TextManager.start_dialog(self.position, text_lines, get_parent().get_path())
 
 func tween_position(_pos: Vector2):
     var tween = create_tween()
@@ -21,10 +27,3 @@ func tween_position(_pos: Vector2):
     tween.tween_property(self, "position", self.position +  _pos, 0.5)
     tween.play()
     await tween.finished
-
-
-var sample_lines: Array[String] = [
-    "aaaaaaa",
-    "bbbbbbbbbbb",
-    "ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
-]

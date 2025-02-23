@@ -11,6 +11,9 @@ enum Direction {IDLE, LEFT, RIGHT}
 
 var guide_textbox: MarginContainer
 
+@onready var downed_textbox: StaticBody2D = $DownedTextBox
+@onready var downed_textbox_node: Node2D = $DownedTextBox/DownTextBox
+@onready var downed_textbox_collision: CollisionShape2D = $DownedTextBox/CollisionShape2D
 
 
 
@@ -30,15 +33,21 @@ func _ready() -> void:
 
     wait_timer.timeout.connect(self._on_ready_gimmick)
     load_wait_timer.timeout.connect(self._on_load_end)
-
     load_wait_timer.start(2.0)
+
+    downed_textbox.visible = false
+    downed_textbox_collision.disabled = true
+
+
+    var downed_nexttextbox_area = get_node("DonwedTextBoxNext").get_children()
+    downed_nexttextbox_area[0].notice_enter_next_downedtextbox.connect(self._nexttext_downed_textbox)
+    downed_nexttextbox_area[1].notice_enter_next_downedtextbox.connect(self._nexttext_downed_textbox)
 
 
 
 func _on_load_end() -> void:
     guide_textbox = $CanvasLayer/TextBoxCanvas
     print_debug(guide_textbox)
-
 
 
 
@@ -71,6 +80,9 @@ func _on_button_pressed_down() -> void:
     guide.tween_position(Vector2(0, 1000))
     guide_textbox.tween_position(Vector2(0, 1000))
 
+    downed_textbox.visible = true
+    downed_textbox_collision.disabled = false
+
 
 
 
@@ -85,6 +97,19 @@ func camera_tween_back():
 
 
 
+func _nexttext_downed_textbox():
+    downed_textbox_node._enterd_next_textbox_area()
+
+
 func _on_ready_gimmick():
     player.direction = Direction.LEFT
 
+
+func get_staged_line() -> Array[String]:
+    var lines: Array[String] = [
+        "Stage3 Stage3",
+        "lets goooooo",
+        "WAAAAAA"
+    ]
+
+    return lines

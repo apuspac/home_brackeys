@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvmwoefp7apyn"]
+[gd_scene load_steps=16 format=3 uid="uid://dvmwoefp7apyn"]
 
 [ext_resource type="Script" path="res://scripts/stage3.gd" id="1_yxgya"]
 [ext_resource type="TileSet" uid="uid://cig463v134kkq" path="res://scripts/brackyes-bg.tres" id="2_vt6fq"]
@@ -10,12 +10,18 @@
 [ext_resource type="PackedScene" uid="uid://dxnhdyk1vmw0f" path="res://scenes/parts_scenes/button.tscn" id="8_ydvr2"]
 [ext_resource type="PackedScene" uid="uid://cnkxtp2ttcd74" path="res://scenes/parts_scenes/down_text_box.tscn" id="9_mk0rr"]
 [ext_resource type="Script" path="res://scripts/parts_scripts/next_text_box_area.gd" id="10_4cf6n"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/next_downed_textbox_area.gd" id="11_tkoyw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vro2b"]
 size = Vector2(210, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brc1y"]
 size = Vector2(24, 20.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kicyf"]
+size = Vector2(213, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4mhg"]
 
 [node name="Stage3" type="Node2D"]
 script = ExtResource("1_yxgya")
@@ -97,29 +103,46 @@ position = Vector2(744, 432)
 [node name="DownButton" parent="." instance=ExtResource("8_ydvr2")]
 position = Vector2(760, 240)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="DownedTextBox" type="StaticBody2D" parent="."]
 position = Vector2(488, 432)
 collision_layer = 2
 
-[node name="DownTextBox" parent="StaticBody2D" instance=ExtResource("9_mk0rr")]
+[node name="DownTextBox" parent="DownedTextBox" instance=ExtResource("9_mk0rr")]
 scale = Vector2(0.445, 0.445)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownedTextBox"]
 position = Vector2(103, 15)
 shape = SubResource("RectangleShape2D_vro2b")
 
-[node name="Node" type="Node" parent="."]
+[node name="TextBoxNext" type="Node" parent="."]
 
-[node name="Area2D" type="Area2D" parent="Node"]
+[node name="Area2D" type="Area2D" parent="TextBoxNext"]
 position = Vector2(744, 424)
 script = ExtResource("10_4cf6n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D"]
 shape = SubResource("RectangleShape2D_brc1y")
 
-[node name="Area2D2" type="Area2D" parent="Node"]
+[node name="Area2D2" type="Area2D" parent="TextBoxNext"]
 position = Vector2(760, 232)
 script = ExtResource("10_4cf6n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D2"]
 shape = SubResource("RectangleShape2D_brc1y")
+
+[node name="DonwedTextBoxNext" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="DonwedTextBoxNext"]
+position = Vector2(592, 416)
+script = ExtResource("11_tkoyw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DonwedTextBoxNext/Area2D"]
+shape = SubResource("RectangleShape2D_kicyf")
+
+[node name="Area2D2" type="Area2D" parent="DonwedTextBoxNext"]
+position = Vector2(352, 416)
+script = ExtResource("11_tkoyw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DonwedTextBoxNext/Area2D2"]
+scale = Vector2(6.52, 1)
+shape = SubResource("RectangleShape2D_m4mhg")
