@@ -1,0 +1,124 @@
+[gd_scene load_steps=14 format=3 uid="uid://0yjww3jnt5pu"]
+
+[ext_resource type="Script" path="res://scripts/gameover.gd" id="1_3a3oo"]
+[ext_resource type="TileSet" uid="uid://cig463v134kkq" path="res://scripts/brackyes-bg.tres" id="2_bbt0s"]
+[ext_resource type="TileSet" uid="uid://cd3sdlcs1tmgc" path="res://scripts/brackyes.tres" id="3_54hv4"]
+[ext_resource type="Theme" uid="uid://dkmjyg6gujjuu" path="res://scripts/parts_scripts/text_box.tres" id="4_k4c3l"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/guide_box.gd" id="5_0olpn"]
+[ext_resource type="PackedScene" uid="uid://cqwjvljkx3jpt" path="res://scenes/parts_scenes/guide.tscn" id="6_knf0x"]
+[ext_resource type="PackedScene" uid="uid://8cuuv6odub2t" path="res://scenes/parts_scenes/player.tscn" id="7_grbp5"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/next_text_box_area.gd" id="8_2bkbs"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/current_scene_change.gd" id="9_b6vfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5xnh"]
+size = Vector2(112, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3rxi"]
+size = Vector2(179.25, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kr23w"]
+size = Vector2(272, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kytov"]
+
+[node name="Gameover" type="Node2D"]
+script = ExtResource("1_3a3oo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1288.0
+offset_bottom = 744.0
+color = Color(0.467794, 0.472543, 0.499755, 1)
+
+[node name="TileMapBack" type="TileMap" parent="."]
+tile_set = ExtResource("2_bbt0s")
+format = 2
+
+[node name="TileMapFront" type="TileMap" parent="."]
+tile_set = ExtResource("3_54hv4")
+format = 2
+layer_0/tile_data = PackedInt32Array(2031616, 262144, 1, 2031617, 327680, 1, 1114116, 262144, 0, 1114115, 262144, 0, 1114114, 262144, 0, 1114113, 262144, 0, 1114112, 262144, 0, 1179648, 262144, 1, 1245184, 262144, 1, 1310720, 262144, 1, 1376256, 262144, 1, 1441792, 262144, 1, 1507328, 262144, 1, 1572864, 262144, 1, 1638400, 262144, 1, 1703936, 262144, 1, 1769472, 262144, 1, 1835008, 262144, 1, 1900544, 262144, 1, 1966080, 262144, 1, 1179649, 262144, 1, 1245185, 262144, 1, 1310721, 262144, 1, 1376257, 262144, 1, 1441793, 262144, 1, 1507329, 262144, 1, 1572865, 262144, 1, 1638401, 262144, 1, 1703937, 262144, 1, 1769473, 262144, 1, 1835009, 262144, 1, 1900545, 262144, 1, 1966081, 327680, 1, 1179650, 262144, 1, 1245186, 262144, 1, 1310722, 262144, 1, 1376258, 262144, 1, 1441794, 262144, 1, 1507330, 262144, 1, 1572866, 262144, 1, 1638402, 262144, 1, 1703938, 262144, 1, 1769474, 327680, 1, 1835010, 327680, 1, 1900546, 327680, 1, 1966082, 327680, 1, 1179651, 262144, 1, 1245187, 262144, 1, 1310723, 262144, 1, 1376259, 262144, 1, 1441795, 262144, 1, 1507331, 262144, 1, 1572867, 327680, 1, 1638403, 327680, 1, 1703939, 327680, 1, 1179652, 262144, 1, 1245188, 262144, 1, 1310724, 327680, 1, 1376260, 327680, 1, 1441796, 327680, 1, 1507332, 327680, 1, 1572868, 327680, 1, 1048580, 524288, 3, 1048579, 524288, 3, 2031618, 262144, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("4_k4c3l")
+text = "title"
+
+[node name="Next" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("4_k4c3l")
+text = "Next
+"
+
+[node name="GuideBox" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 232.0
+offset_bottom = 168.0
+script = ExtResource("5_0olpn")
+
+[node name="Guide" parent="CanvasLayer/GuideBox" instance=ExtResource("6_knf0x")]
+visible = false
+offset_left = -95.0
+offset_top = -90.0
+offset_right = -55.0
+offset_bottom = -50.0
+
+[node name="Timer" type="Timer" parent="CanvasLayer/GuideBox"]
+one_shot = true
+
+[node name="Player" parent="." instance=ExtResource("7_grbp5")]
+position = Vector2(48, 272)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -50)
+zoom = Vector2(2, 2)
+
+[node name="TextBoxNext" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="TextBoxNext"]
+script = ExtResource("8_2bkbs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D"]
+position = Vector2(360, 112)
+shape = SubResource("RectangleShape2D_u5xnh")
+
+[node name="Area2D2" type="Area2D" parent="TextBoxNext"]
+script = ExtResource("8_2bkbs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D2"]
+position = Vector2(360, 40)
+shape = SubResource("RectangleShape2D_s3rxi")
+
+[node name="Area2D3" type="Area2D" parent="TextBoxNext"]
+script = ExtResource("8_2bkbs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D3"]
+position = Vector2(392, 184)
+shape = SubResource("RectangleShape2D_kr23w")
+
+[node name="SceneChange" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="SceneChange"]
+position = Vector2(224, 488)
+script = ExtResource("9_b6vfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChange/Area2D"]
+scale = Vector2(18.125, -8.5)
+shape = SubResource("RectangleShape2D_kytov")
