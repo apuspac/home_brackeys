@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://62sdn1ij1qvw"]
+[gd_scene load_steps=15 format=3 uid="uid://62sdn1ij1qvw"]
 
 [ext_resource type="Script" path="res://scripts/tutorial.gd" id="1_66wsf"]
 [ext_resource type="TileSet" uid="uid://cd3sdlcs1tmgc" path="res://scripts/brackyes.tres" id="1_ett7s"]
@@ -16,6 +16,9 @@ size = Vector2(80, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7anem"]
 size = Vector2(269, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqilt"]
+size = Vector2(90, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbp2t"]
 
@@ -93,6 +96,13 @@ script = ExtResource("8_amp6s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D2"]
 position = Vector2(713.5, 72)
 shape = SubResource("RectangleShape2D_7anem")
+
+[node name="Area2D3" type="Area2D" parent="TextBoxNext"]
+script = ExtResource("8_amp6s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D3"]
+position = Vector2(368, 296)
+shape = SubResource("RectangleShape2D_qqilt")
 
 [node name="SceneChange" type="Node" parent="."]
 

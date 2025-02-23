@@ -23,7 +23,7 @@ size = Vector2(112, 18)
 size = Vector2(179.25, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kr23w"]
-size = Vector2(272, 18)
+size = Vector2(236, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4qq4"]
 
@@ -304,14 +304,15 @@ position = Vector2(824, 304)
 [node name="TextBoxNext" type="Node2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="TextBoxNext"]
-position = Vector2(168, 32)
+position = Vector2(808, 488)
+scale = Vector2(0.326703, 1.00392)
 script = ExtResource("8_4d6c1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D"]
 shape = SubResource("RectangleShape2D_u5xnh")
 
 [node name="Area2D2" type="Area2D" parent="TextBoxNext"]
-position = Vector2(168, 32)
+position = Vector2(1128, 392)
 script = ExtResource("8_4d6c1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D2"]
@@ -322,6 +323,7 @@ position = Vector2(168, 32)
 script = ExtResource("8_4d6c1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D3"]
+position = Vector2(-6, 456)
 shape = SubResource("RectangleShape2D_kr23w")
 
 [node name="SceneChange" type="Node" parent="."]

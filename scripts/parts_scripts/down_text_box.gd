@@ -12,9 +12,8 @@ var add_child_path: String
 @onready var text_box = $Node2D
 
 var sample_lines: Array[String] = [
-    "WAAAAAA",
-    "donwed",
-    "waaaaaait"
+    "Waaah",
+    "Waaaaaait"
 ]
 
 

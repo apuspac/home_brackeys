@@ -107,9 +107,9 @@ func _on_ready_gimmick():
 
 func get_staged_line() -> Array[String]:
     var lines: Array[String] = [
-        "Stage3 Stage3",
-        "lets goooooo",
-        "WAAAAAA"
+        "It's dangerous here!",
+        "Turn back now!",
+        "Waaaah"
     ]
 
     return lines

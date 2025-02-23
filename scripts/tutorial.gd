@@ -10,8 +10,9 @@ func _on_title_pressed() -> void:
 
 func get_staged_line() -> Array[String]:
     var lines: Array[String] = [
-        "tutorial tutorial",
-        "late late",
+        "Let's go home!",
+        "Press Space to jump",
+        "Nice!!",
         "lets gooooooooo"
     ]
 

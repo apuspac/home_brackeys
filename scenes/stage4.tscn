@@ -170,4 +170,4 @@ theme_override_colors/font_color = Color(0.733333, 0.45098, 0.4, 1)
 text = ">>>"
 
 [node name="Archer" parent="." instance=ExtResource("12_3e6rn")]
-position = Vector2(192, 376)
+position = Vector2(152, 376)

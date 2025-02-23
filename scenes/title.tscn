@@ -72,7 +72,7 @@ offset_bottom = 203.0
 scale = Vector2(1.39986, 1.18044)
 
 [node name="Label" parent="TextBoxCanvas/MarginContainer" index="0"]
-text = "aaahhhhhhhhhhh
+text = "Let's go home!
 "
 
 [node name="TextBoxCanvas2" parent="." instance=ExtResource("5_y2vov")]

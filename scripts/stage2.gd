@@ -69,10 +69,10 @@ func _on_button_pressed_down2() -> void:
 
 func get_staged_line() -> Array[String]:
     var lines: Array[String] = [
-        "Stage2 Stage2",
-        "->> ->> ->>",
-        "->> ->> ->>",
-        "AAAHHH",
+        "hmmmm???",
+        "The bridge has collapsed!",
+        "Let's head the other way!",
+        "Nice!",
     ]
 
     return lines
