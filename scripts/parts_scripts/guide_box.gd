@@ -12,7 +12,6 @@ func _ready():
     timer.start(0.3)
 
 func _init_ready():
-    print_debug(get_parent().get_path())
     guide.visible = true
 
     # stage_nodeからcall
