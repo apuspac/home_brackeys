@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=3 uid="uid://dlvqh4iqnldu3"]
+
+[ext_resource type="Script" path="res://scripts/stage1.gd" id="1_fch0l"]
+[ext_resource type="TileSet" uid="uid://cig463v134kkq" path="res://scripts/brackyes-bg.tres" id="2_dtvlj"]
+[ext_resource type="TileSet" uid="uid://cd3sdlcs1tmgc" path="res://scripts/brackyes.tres" id="3_l5og4"]
+[ext_resource type="Theme" uid="uid://dkmjyg6gujjuu" path="res://scripts/parts_scripts/text_box.tres" id="4_7v8bt"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/guide_box.gd" id="5_36dgc"]
+[ext_resource type="PackedScene" uid="uid://cqwjvljkx3jpt" path="res://scenes/parts_scenes/guide.tscn" id="6_4p47t"]
+[ext_resource type="PackedScene" uid="uid://8cuuv6odub2t" path="res://scenes/parts_scenes/player.tscn" id="7_xp0m4"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/next_text_box_area.gd" id="8_dapb3"]
+[ext_resource type="PackedScene" uid="uid://b31xfpxvaw438" path="res://scenes/parts_scenes/gunner.tscn" id="8_kcgb2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5xnh"]
+size = Vector2(112, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3rxi"]
+size = Vector2(179.25, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kr23w"]
+size = Vector2(272, 18)
+
+[node name="TestStage" type="Node2D"]
+script = ExtResource("1_fch0l")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1288.0
+offset_bottom = 744.0
+color = Color(0.467794, 0.472543, 0.499755, 1)
+
+[node name="TileMapBack" type="TileMap" parent="."]
+tile_set = ExtResource("2_dtvlj")
+format = 2
+
+[node name="TileMapFront" type="TileMap" parent="."]
+tile_set = ExtResource("3_l5og4")
+format = 2
+layer_0/tile_data = PackedInt32Array(2031687, 262144, 0, 2031688, 262144, 0, 2031689, 262144, 0, 2031690, 262144, 0, 2031691, 262144, 0, 2031692, 262144, 0, 2031693, 262144, 0, 2031694, 262144, 0, 2031695, 262144, 0, 1310799, 262144, 1, 1376335, 262144, 1, 1441871, 262144, 1, 1507407, 262144, 1, 1572943, 262144, 1, 983119, 262144, 1, 1048655, 262144, 1, 1114191, 262144, 1, 1179727, 262144, 1, 1245263, 262144, 1, 196687, 262144, 1, 262223, 262144, 1, 327759, 262144, 1, 393295, 262144, 1, 458831, 262144, 1, 524367, 262144, 1, 589903, 262144, 1, 655439, 262144, 1, 720975, 262144, 1, 786511, 262144, 1, 852047, 262144, 1, 917583, 262144, 1, 2097223, 262144, 1, 2162759, 262144, 1, 2228295, 262144, 1, 2293831, 262144, 1, 2359367, 262144, 1, 2424903, 262144, 1, 2490439, 262144, 1, 2097224, 262144, 1, 2162760, 262144, 1, 2228296, 262144, 1, 2293832, 262144, 1, 2359368, 262144, 1, 2424904, 262144, 1, 2490440, 262144, 1, 2097225, 262144, 1, 2162761, 262144, 1, 2228297, 262144, 1, 2293833, 262144, 1, 2359369, 262144, 1, 2424905, 262144, 1, 2490441, 262144, 1, 2097226, 262144, 1, 2162762, 262144, 1, 2228298, 262144, 1, 2293834, 262144, 1, 2359370, 262144, 1, 2424906, 262144, 1, 2490442, 262144, 1, 2097227, 262144, 1, 2162763, 262144, 1, 2228299, 262144, 1, 2293835, 262144, 1, 2359371, 262144, 1, 2424907, 262144, 1, 2490443, 262144, 1, 2097228, 262144, 1, 2162764, 262144, 1, 2228300, 262144, 1, 2293836, 262144, 1, 2359372, 262144, 1, 2424908, 262144, 1, 2490444, 262144, 1, 2097229, 262144, 1, 2162765, 262144, 1, 2228301, 262144, 1, 2293837, 262144, 1, 2359373, 262144, 1, 2424909, 262144, 1, 2490445, 262144, 1, 2097230, 262144, 1, 2162766, 262144, 1, 2228302, 262144, 1, 2293838, 262144, 1, 2359374, 262144, 1, 2424910, 262144, 1, 2490446, 262144, 1, 2097231, 262144, 1, 2162767, 262144, 1, 2228303, 262144, 1, 2293839, 262144, 1, 2359375, 262144, 1, 2424911, 262144, 1, 2490447, 262144, 1, 1638479, 262144, 1, 1704015, 262144, 1, 1769551, 262144, 1, 2031686, 262144, 0, 2031685, 262144, 0, 2031684, 262144, 0, 2031683, 262144, 0, 2031682, 262144, 0, 2031681, 262144, 0, 2031680, 262144, 0, 2031679, 262144, 0, 2031676, 262144, 0, 2031677, 262144, 0, 2031678, 262144, 0, 1638470, 262144, 1, 1638471, 262144, 1, 1638472, 262144, 1, 1638473, 262144, 1, 1638474, 262144, 1, 1638475, 262144, 1, 1638476, 262144, 1, 1638477, 262144, 1, 1638478, 262144, 1, 1179712, 262144, 1, 1179713, 262144, 1, 1179714, 262144, 1, 1179715, 262144, 1, 1179716, 262144, 1, 1179717, 262144, 1, 1179718, 262144, 1, 589895, 262144, 1, 589896, 262144, 1, 589897, 262144, 1, 589898, 262144, 1, 589899, 262144, 1, 589900, 262144, 1, 589901, 262144, 1, 589902, 262144, 1, 1835087, 262144, 1, 1900623, 262144, 1, 1966159, 262144, 1, 2031675, 262144, 0, 2031674, 262144, 0, 2031673, 262144, 0, 2031672, 262144, 0, 2031671, 262144, 0, 2031670, 262144, 0, 2031669, 262144, 0, 2031668, 262144, 0, 2031667, 262144, 0, 2031666, 262144, 0, 2031665, 262144, 0, 2031664, 262144, 0, 2031663, 262144, 0, 2031662, 262144, 0, 2031661, 262144, 0, 2031660, 262144, 0, 2031659, 262144, 0, 2031658, 262144, 0, 2097193, 262144, 0, 2097192, 262144, 0, 2097191, 262144, 0, 2097190, 262144, 0, 2097189, 262144, 0, 2097188, 262144, 0, 2097187, 262144, 0, 2031650, 262144, 0, 2031649, 262144, 0, 2031648, 262144, 0, 2031647, 262144, 0, 1966110, 262144, 0, 1966109, 262144, 0, 1966108, 262144, 0, 1966107, 262144, 0, 1900571, 262144, 0, 1900570, 262144, 0, 1900569, 262144, 0, 1835032, 262144, 0, 1835031, 262144, 0, 1769494, 262144, 0, 1769493, 262144, 0, 1703956, 262144, 0, 1703955, 262144, 0, 1638418, 262144, 0, 1638417, 262144, 0, 1638416, 262144, 0, 1572879, 262144, 0, 1572878, 262144, 0, 1572877, 262144, 0, 1507340, 262144, 0, 1507339, 262144, 0, 1441802, 262144, 0, 1441801, 262144, 0, 1376264, 262144, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("4_7v8bt")
+text = "title"
+
+[node name="Next" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("4_7v8bt")
+text = "Next
+"
+
+[node name="GuideBox" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 232.0
+offset_bottom = 168.0
+script = ExtResource("5_36dgc")
+
+[node name="Guide" parent="CanvasLayer/GuideBox" instance=ExtResource("6_4p47t")]
+visible = false
+offset_left = -95.0
+offset_top = -90.0
+offset_right = -55.0
+offset_bottom = -50.0
+
+[node name="Timer" type="Timer" parent="CanvasLayer/GuideBox"]
+one_shot = true
+
+[node name="Player" parent="." instance=ExtResource("7_xp0m4")]
+position = Vector2(1208, 496)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -50)
+zoom = Vector2(2, 2)
+
+[node name="Gunner" parent="Player" instance=ExtResource("8_kcgb2")]
+position = Vector2(-192, -192)
+
+[node name="TextBoxNext" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="TextBoxNext"]
+position = Vector2(968, 488)
+script = ExtResource("8_dapb3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D"]
+shape = SubResource("RectangleShape2D_u5xnh")
+
+[node name="Area2D2" type="Area2D" parent="TextBoxNext"]
+position = Vector2(560, 488)
+script = ExtResource("8_dapb3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D2"]
+shape = SubResource("RectangleShape2D_s3rxi")
+
+[node name="Area2D3" type="Area2D" parent="TextBoxNext"]
+position = Vector2(136, 488)
+script = ExtResource("8_dapb3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D3"]
+shape = SubResource("RectangleShape2D_kr23w")
