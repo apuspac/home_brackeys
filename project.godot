@@ -15,10 +15,14 @@ run/main_scene="res://scenes/title.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+TextManager="*res://scripts/parts_scripts/TextManager.gd"
+
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=800
+window/size/viewport_height=600
 window/stretch/mode="viewport"
 
 [input]

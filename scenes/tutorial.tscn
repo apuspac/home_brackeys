@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://62sdn1ij1qvw"]
+[gd_scene load_steps=11 format=3 uid="uid://62sdn1ij1qvw"]
 
 [ext_resource type="Script" path="res://scripts/tutorial.gd" id="1_66wsf"]
 [ext_resource type="TileSet" uid="uid://cd3sdlcs1tmgc" path="res://scripts/brackyes.tres" id="1_ett7s"]
 [ext_resource type="TileSet" uid="uid://cig463v134kkq" path="res://scripts/brackyes-bg.tres" id="2_ub0lg"]
+[ext_resource type="Theme" uid="uid://dkmjyg6gujjuu" path="res://scripts/parts_scripts/text_box.tres" id="4_0nsaf"]
 [ext_resource type="PackedScene" uid="uid://8cuuv6odub2t" path="res://scenes/parts_scenes/player.tscn" id="4_das5q"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/guide_box.gd" id="5_ypa1e"]
+[ext_resource type="PackedScene" uid="uid://cqwjvljkx3jpt" path="res://scenes/parts_scenes/guide.tscn" id="6_8ayfp"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/next_text_box_area.gd" id="8_amp6s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q5kyu"]
+size = Vector2(80, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7anem"]
+size = Vector2(269, 20)
 
 [node name="tutorial" type="Node2D"]
 script = ExtResource("1_66wsf")
@@ -31,13 +41,51 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Title" type="Button" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 0
 offset_right = 144.0
 offset_bottom = 56.0
+theme = ExtResource("4_0nsaf")
 text = "title"
+
+[node name="GuideBox" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 232.0
+offset_bottom = 168.0
+script = ExtResource("5_ypa1e")
+
+[node name="Guide" parent="CanvasLayer/GuideBox" instance=ExtResource("6_8ayfp")]
+visible = false
+offset_left = -95.0
+offset_top = -90.0
+offset_right = -55.0
+offset_bottom = -50.0
+
+[node name="Timer" type="Timer" parent="CanvasLayer/GuideBox"]
+one_shot = true
 
 [node name="Player" parent="." instance=ExtResource("4_das5q")]
 position = Vector2(56, 256)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(3, 3)
+position = Vector2(0, -50)
+zoom = Vector2(2, 2)
+
+[node name="TextBoxNext" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="TextBoxNext"]
+script = ExtResource("8_amp6s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D"]
+position = Vector2(248, 232)
+shape = SubResource("RectangleShape2D_q5kyu")
+
+[node name="Area2D2" type="Area2D" parent="TextBoxNext"]
+script = ExtResource("8_amp6s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D2"]
+position = Vector2(713.5, 72)
+shape = SubResource("RectangleShape2D_7anem")

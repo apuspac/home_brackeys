@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8pef28vobs8n"]
+
+[ext_resource type="Script" path="res://scripts/stage_2.gd" id="1_hgptu"]
+[ext_resource type="TileSet" uid="uid://cig463v134kkq" path="res://scripts/brackyes-bg.tres" id="1_w1rhq"]
+[ext_resource type="TileSet" uid="uid://cd3sdlcs1tmgc" path="res://scripts/brackyes.tres" id="2_naetj"]
+[ext_resource type="PackedScene" uid="uid://8cuuv6odub2t" path="res://scenes/parts_scenes/player.tscn" id="4_gkthh"]
+[ext_resource type="Theme" uid="uid://dkmjyg6gujjuu" path="res://scripts/parts_scripts/text_box.tres" id="4_nnuri"]
+[ext_resource type="PackedScene" uid="uid://dxnhdyk1vmw0f" path="res://scenes/parts_scenes/button.tscn" id="6_2cv6e"]
+[ext_resource type="PackedScene" uid="uid://cnkxtp2ttcd74" path="res://scenes/parts_scenes/down_text_box.tscn" id="7_sej13"]
+
+[node name="Stage2" type="Node2D"]
+script = ExtResource("1_hgptu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1288.0
+offset_bottom = 744.0
+color = Color(0.467794, 0.472543, 0.499755, 1)
+
+[node name="TileMapBack" type="TileMap" parent="."]
+tile_set = ExtResource("1_w1rhq")
+format = 2
+
+[node name="TileMapFront" type="TileMap" parent="."]
+tile_set = ExtResource("2_naetj")
+format = 2
+layer_0/tile_data = PackedInt32Array(1769509, 393216, 0, 1769510, 393216, 0, 1769511, 393216, 0, 1769512, 393216, 0, 1769513, 393216, 0, 1769514, 393216, 0, 1769515, 393216, 0, 1769516, 393216, 0, 1769517, 393216, 0, 1769518, 393216, 0, 1769519, 393216, 0, 1769520, 393216, 0, 1769521, 393216, 0, 1769522, 393216, 0, 1769523, 393216, 0, 1769524, 393216, 0, 1769525, 393216, 0, 1769526, 393216, 0, 1769527, 393216, 0, 1769528, 393216, 0, 1769529, 393216, 0, 1769530, 393216, 0, 1769531, 393216, 0, 1769532, 393216, 0, 1769533, 393216, 0, 1769534, 393216, 0, 1769535, 393216, 0, 1769536, 393216, 0, 1769537, 393216, 0, 1769538, 393216, 0, 1769539, 393216, 0, 1769540, 393216, 0, 1769541, 393216, 0, 1769542, 393216, 0, 1769543, 393216, 0, 1769474, 393216, 0, 1769475, 393216, 0, 1769476, 393216, 0, 1769477, 393216, 0, 1769478, 393216, 0, 1769479, 393216, 0, 1769480, 393216, 0, 1769481, 393216, 0, 1769482, 393216, 0, 1769483, 393216, 0, 1769484, 393216, 0, 1769485, 393216, 0, 1769486, 393216, 0, 1769487, 393216, 0, 1769488, 393216, 0, 1769489, 393216, 0, 1769490, 393216, 0, 1769491, 393216, 0, 1769492, 393216, 0, 1769493, 393216, 0, 1769494, 393216, 0, 1769495, 393216, 0, 1769496, 393216, 0, 1769497, 393216, 0, 1769498, 393216, 0, 1769499, 393216, 0, 1769500, 393216, 0, 1769501, 393216, 0, 1769502, 393216, 0, 1769503, 393216, 0, 1769504, 393216, 0, 1769505, 393216, 0, 1769506, 393216, 0, 1769507, 393216, 0, 1769508, 393216, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("4_nnuri")
+text = "title"
+
+[node name="Next" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("4_nnuri")
+text = "Next
+"
+
+[node name="WaitTimer" type="Timer" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("4_gkthh")]
+position = Vector2(1040, 336)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-100, -50)
+zoom = Vector2(2, 2)
+
+[node name="DownTextBox" parent="Player" instance=ExtResource("7_sej13")]
+position = Vector2(-160, -160)
+
+[node name="Button" parent="." instance=ExtResource("6_2cv6e")]
+position = Vector2(808, 432)
