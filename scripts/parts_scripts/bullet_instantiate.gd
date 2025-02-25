@@ -7,31 +7,11 @@ extends Node2D
 var player: CharacterBody2D
 var rng = RandomNumberGenerator.new()
 
-
-
-# var line: Array[String]= [
-#     "S",
-#     "T",
-#     "O",
-#     "P",
-#     ",",
-#     "G",
-#     "O",
-#     "!",
-#     "B",
-#     "A",
-#     "C",
-#     "K",
-#     "!",
-# ]
-
 var line: Array[String] = [
     "STOP",
     "GO",
     "BACK",
 ]
-
-
 
 
 func _ready():
@@ -53,6 +33,7 @@ func spawn_arrow():
     bullet_instance.global_position.x = font_size * (text_index + 1) + self.global_position.x
 
     get_parent().get_parent().add_child(bullet_instance)
+    bullet_instance.change_collision_size(text_index)
     bullet_instance.set_label(line[text_index])
     bullet_instance.notice_on_hit.connect(self._to_player_hit)
 
