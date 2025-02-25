@@ -17,14 +17,11 @@ func _ready():
 
 
 func _physics_process(delta):
-
     var collision = move_and_collide(velocity * delta)
 
     if collision:
         notice_on_hit.emit()
         queue_free()
-    else:
-        move_and_slide()
 
 func free():
     queue_free()
