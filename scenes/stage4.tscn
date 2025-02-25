@@ -35,6 +35,7 @@ color = Color(0.467794, 0.472543, 0.499755, 1)
 [node name="TileMapBack" type="TileMap" parent="."]
 tile_set = ExtResource("2_g3spl")
 format = 2
+layer_0/tile_data = PackedInt32Array(1966083, 524288, 3, 1966159, 524288, 3, 786494, 262144, 1, 852030, 262144, 1, 917566, 262144, 1, 983102, 262144, 1, 1048638, 262144, 1, 1114174, 262144, 1, 1179710, 262144, 1, 1245246, 262144, 1, 786480, 262144, 1, 852016, 262144, 1, 917552, 262144, 1, 983088, 262144, 1, 1048624, 262144, 1, 1114160, 262144, 1, 786464, 262144, 1, 852000, 262144, 1, 917536, 262144, 1, 983072, 262144, 1, 1048608, 262144, 1, 1114144, 262144, 1, 1179680, 262144, 1, 786450, 262144, 1, 851986, 262144, 1, 917522, 262144, 1, 983058, 262144, 1, 1048594, 262144, 1, 1114130, 262144, 1)
 
 [node name="TileMapFront" type="TileMap" parent="."]
 tile_set = ExtResource("3_urmt8")
@@ -92,6 +93,11 @@ position = Vector2(1208, 496)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -50)
 zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 1288
+limit_bottom = 624
+editor_draw_limits = true
 
 [node name="TextBoxNext" type="Node2D" parent="."]
 

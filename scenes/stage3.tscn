@@ -41,6 +41,7 @@ color = Color(0.467794, 0.472543, 0.499755, 1)
 [node name="TileMapBack" type="TileMap" parent="."]
 tile_set = ExtResource("2_vt6fq")
 format = 2
+layer_0/tile_data = PackedInt32Array(45, 393216, 1, 65581, 393216, 1, 131117, 393216, 1, 196653, 393216, 1, 71, 393216, 1, 65607, 393216, 1, 131143, 393216, 1, 196679, 393216, 1, 262215, 393216, 1, 327751, 393216, 1, 12, 393216, 1, 65548, 393216, 1, 131084, 393216, 1, 196620, 393216, 1, 262156, 393216, 1, 327692, 393216, 1, 393228, 393216, 1)
 
 [node name="TileMapFront" type="TileMap" parent="."]
 tile_set = ExtResource("3_bjbvy")
@@ -103,6 +104,11 @@ position = Vector2(1040, 424)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-100, -50)
 zoom = Vector2(2, 2)
+limit_left = 144
+limit_top = 0
+limit_right = 1152
+limit_bottom = 528
+editor_draw_limits = true
 
 [node name="LookButton" parent="." instance=ExtResource("8_ydvr2")]
 position = Vector2(744, 432)

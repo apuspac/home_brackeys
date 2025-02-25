@@ -34,6 +34,7 @@ color = Color(0.467794, 0.472543, 0.499755, 1)
 [node name="TileMapBack" type="TileMap" parent="."]
 tile_set = ExtResource("2_7j28v")
 format = 2
+layer_0/tile_data = PackedInt32Array(1048579, 524288, 3, 1966159, 524288, 3)
 
 [node name="TileMapFront" type="TileMap" parent="."]
 tile_set = ExtResource("3_i2y3g")
@@ -91,6 +92,11 @@ position = Vector2(1208, 496)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -50)
 zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 624
+editor_draw_limits = true
 
 [node name="TextBoxNext" type="Node2D" parent="."]
 

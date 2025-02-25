@@ -33,7 +33,7 @@ func _on_button_pressed_down():
         guide_textbox = layer[2]
 
     guide.visible = false
-    guide_textbox.visible = false
+    # guide_textbox.visible = false
 
     box_explosion.box_explosion()
     clear_timer.start(2.0)
