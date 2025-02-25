@@ -45,9 +45,8 @@ func _timeout_endtimer():
 
 func get_staged_line() -> Array[String]:
     var lines: Array[String] = [
-        "Stage5 Stage5",
         "STOP, GO BACK",
-        "AAAHHH",
+        "aaahhh",
     ]
 
     return lines

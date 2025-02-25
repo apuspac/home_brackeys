@@ -16,10 +16,10 @@ func _on_next_pressed() -> void:
 
 func get_staged_line() -> Array[String]:
     var lines: Array[String] = [
-        "Stage1 Stage1",
-        "->> ->> ->>",
-        "->> ->> ->>",
-        "AAAHHH",
+        "hmm",
+        "You're going the wrong way!",
+        "Turn back!",
+        "Go back!",
     ]
 
     return lines
