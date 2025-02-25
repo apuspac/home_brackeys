@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://dkmjyg6gujjuu" path="res://scripts/parts_scripts/text_box.tres" id="2_gl6c4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ivn4"]
-size = Vector2(32, 56)
+size = Vector2(16, 40)
 
 [node name="TextBullet" type="CharacterBody2D"]
 collision_layer = 4
@@ -21,7 +21,7 @@ theme_override_font_sizes/font_size = 50
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 28)
+position = Vector2(8, 28)
 shape = SubResource("RectangleShape2D_8ivn4")
 
 [node name="Timer" type="Timer" parent="."]

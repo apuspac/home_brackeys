@@ -239,7 +239,7 @@ shape = SubResource("RectangleShape2D_u5xnh")
 script = ExtResource("8_miqd6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextBoxNext/Area2D2"]
-position = Vector2(624, 408)
+position = Vector2(584, 408)
 shape = SubResource("RectangleShape2D_s3rxi")
 
 [node name="Area2D3" type="Area2D" parent="TextBoxNext"]
@@ -261,7 +261,7 @@ scale = Vector2(2.36, 9.24)
 shape = SubResource("RectangleShape2D_x4qq4")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="SceneChange/Area2D"]
-position = Vector2(-1208, -152)
+position = Vector2(-1456, -152)
 scale = Vector2(2.36, 9.24)
 shape = SubResource("RectangleShape2D_x4qq4")
 

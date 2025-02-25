@@ -17,11 +17,14 @@ func _ready():
 
 
 func _physics_process(delta):
+
     var collision = move_and_collide(velocity * delta)
 
     if collision:
         notice_on_hit.emit()
         queue_free()
+    else:
+        move_and_slide()
 
 func free():
     queue_free()
@@ -35,18 +38,15 @@ func set_label(bullet_text: String):
 
 func change_collision_size(area_type: int):
     var new_shape= RectangleShape2D.new()
-    var offset: float
+    var offset: float = 25.0
 
     match area_type:
         0:
             new_shape.size = Vector2(96, 40)
-            offset = 40.0
         1:
             new_shape.size = Vector2(48, 40)
-            offset = 15.0
         2:
             new_shape.size = Vector2(96, 40)
-            offset = 40.0
 
     collision_area.shape = new_shape
 
