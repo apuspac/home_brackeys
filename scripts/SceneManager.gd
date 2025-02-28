@@ -5,10 +5,15 @@ extends Node
 var current_scene: Node
 var current_scene_path: String
 
+var tutorial_count: int
+
+signal notice_tutorial_over()
 
 func _ready():
     current_scene = get_tree().current_scene
     current_scene_path = get_tree().current_scene.scene_file_path
+
+    tutorial_count = 0
 
 
 func go_to_gameover():
@@ -38,8 +43,10 @@ func go_to_next_scene():
         current_scene = get_tree().current_scene
 
 
+
 func go_to_tutorial():
     scene_change("res://scenes/tutorial.tscn")
+    tutorial_count += 1
     # get_tree().change_scene_to_file("res://scenes/tutorial.tscn")
 
 func go_to_stage1():
@@ -48,6 +55,7 @@ func go_to_stage1():
 
 func go_to_title_scene() -> void:
     scene_change("res://scenes/title.tscn")
+
 
 func go_to_ending() -> void:
     scene_change("res://scenes/ending.tscn")
