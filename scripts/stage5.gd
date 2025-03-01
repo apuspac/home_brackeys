@@ -28,25 +28,14 @@ func _on_next_pressed() -> void:
 func _on_button_pressed_down():
     # なぜかnodeが取れないことがある。ので、保険のためnodeを取っとく。
     # -> これ、たぶんですが、textboxが更新される関係でcontainer_nameがtmp_nameが使われるから。
-
-    while(true):
-        var layer_count = get_node("CanvasLayer").get_children()
-        if layer_count.size() == 2:
-            break
-
-
-
-    if guide_textbox == null:
-        var layer = get_node("CanvasLayer").get_children()
-        print(layer)
-
-        # guide_textbox = layer[2]
+    var layer = get_node("CanvasLayer").get_children()
+    guide_textbox = layer[2]
 
     guide.visible = false
     guide_textbox.visible = false
 
     box_explosion.box_explosion()
-    clear_timer.start(2.0)
+    clear_timer.start(0.5)
 
 
 func _timeout_endtimer():
@@ -56,7 +45,8 @@ func _timeout_endtimer():
 func get_staged_line() -> Array[String]:
     var lines: Array[String] = [
         "STOP, GO BACK",
-        "aaahhh",
+        "No",
+        "aaahhh aaahhh",
     ]
 
     return lines

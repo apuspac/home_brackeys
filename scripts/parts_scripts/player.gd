@@ -8,6 +8,8 @@ var SPEED: float = 200.0
 enum Direction {IDLE, LEFT, RIGHT}
 var direction: Direction
 var sprite: AnimatedSprite2D
+@onready var hit_sfx: AudioStreamPlayer = $HitSFX
+@onready var explosion_sfx: AudioStreamPlayer = $ExplosionSFX
 
 
 @onready var sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -60,6 +62,7 @@ func move(delta) -> void:
     move_and_slide()
 
 func _on_wall_collision() -> void:
+    hit_sfx.play()
     if direction == Direction.RIGHT:
         direction = Direction.LEFT
     else:
@@ -77,4 +80,5 @@ func change_animation() -> void:
 
 func player_explosion():
     explosion.play("explosion")
+    explosion_sfx.play()
     sprite_2d.visible = false
