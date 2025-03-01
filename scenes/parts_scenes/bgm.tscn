@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://s3qspxr3vkh8"]
+
+[ext_resource type="AudioStream" uid="uid://f8qfi84lpaw8" path="res://assets/music-loop-bundle-download_pre2023/Ludum Dare 28 01.ogg" id="1_kupb8"]
+
+[node name="BGM" type="AudioStreamPlayer"]
+stream = ExtResource("1_kupb8")
+autoplay = true
+bus = &"BGM"

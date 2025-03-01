@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 TextManager="*res://scripts/parts_scripts/TextManager.gd"
 SceneManager="*res://scripts/SceneManager.gd"
 SceneTransition="*res://scenes/parts_scenes/scene_transition.tscn"
+BGM="*res://scenes/parts_scenes/bgm.tscn"
 
 [display]
 

@@ -1,8 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://8cuuv6odub2t"]
+[gd_scene load_steps=27 format=3 uid="uid://8cuuv6odub2t"]
 
 [ext_resource type="Texture2D" uid="uid://b7vw5fo648u15" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="1_031fy"]
 [ext_resource type="Script" path="res://scripts/parts_scripts/player.gd" id="1_p8nd7"]
 [ext_resource type="Texture2D" uid="uid://t43kfnaukob" path="res://assets/Fire Effect 2/Explosion SpriteSheet.png" id="3_p27yk"]
+[ext_resource type="AudioStream" uid="uid://bmuibols44c7e" path="res://assets/Classic Arcade SFX/Hit/Hit.wav" id="4_uufjn"]
+[ext_resource type="AudioStream" uid="uid://c3puw62cjv4of" path="res://assets/Classic Arcade SFX/Explosions/Explosion_10.wav" id="5_j6cch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_32enr"]
 atlas = ExtResource("1_031fy")
@@ -145,7 +147,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jos3d")
 }],
-"loop": true,
+"loop": false,
 "name": &"explosion",
 "speed": 15.0
 }]
@@ -168,3 +170,11 @@ shape = SubResource("CapsuleShape2D_lpfts")
 [node name="Explosion" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3sjnc")
 animation = &"explosion"
+
+[node name="HitSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uufjn")
+bus = &"SFX"
+
+[node name="ExplosionSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_j6cch")
+bus = &"SFX"
